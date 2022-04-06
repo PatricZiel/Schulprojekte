@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D8C182CF-FD09-4BCD-A957-0DD7C31CBB05}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Schulprojekte</RootNamespace>
+    <AssemblyName>Schulprojekte</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Faces\Application.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Faces\Application.Designer.cs">
+      <DependentUpon>Application.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Faces\Dashboard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Faces\Dashboard.Designer.cs">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Faces\QuantitativeOfferComparison\QuantitativeOfferComparisonStep1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Faces\QuantitativeOfferComparison\QuantitativeOfferComparisonStep1.Designer.cs">
+      <DependentUpon>QuantitativeOfferComparisonStep1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Faces\QuantitativeOfferComparison\QuantitativeOfferComparisonStep2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Faces\QuantitativeOfferComparison\QuantitativeOfferComparisonStep2.Designer.cs">
+      <DependentUpon>QuantitativeOfferComparisonStep2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Faces\QuantitativeOfferComparison\QuantitativeOfferComparisonStep3.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Faces\QuantitativeOfferComparison\QuantitativeOfferComparisonStep3.Designer.cs">
+      <DependentUpon>QuantitativeOfferComparisonStep3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Faces\QuantitativeOfferComparison\QuantitativeOfferComparisonStep4.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Faces\QuantitativeOfferComparison\QuantitativeOfferComparisonStep4.Designer.cs">
+      <DependentUpon>QuantitativeOfferComparisonStep4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Faces\QuantitativeOfferComparison\QuantitativeOfferComparisonTemplate.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Faces\QuantitativeOfferComparison\QuantitativeOfferComparisonTemplate.Designer.cs">
+      <DependentUpon>QuantitativeOfferComparisonTemplate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Handler\FacesHandler.cs" />
+    <Compile Include="Handler\TypeHandler.cs" />
+    <Compile Include="Objekte\ComboItem.cs" />
+    <Compile Include="Objekte\QuantitativeOfferComparisonOfferInformation.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\Constants.cs" />
+    <Compile Include="Resources\Language_de.cs" />
+    <Compile Include="UIElements\GoToProjectButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UIElements\roundButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UIElements\Sidebar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UIElements\Sidebar.Designer.cs">
+      <DependentUpon>Sidebar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UIElements\Step.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UIElements\Step.Designer.cs">
+      <DependentUpon>Step.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UIElements\UserInput.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UIElements\UserInput.Designer.cs">
+      <DependentUpon>UserInput.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Faces\Application.resx">
+      <DependentUpon>Application.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Faces\Dashboard.resx">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Faces\QuantitativeOfferComparison\QuantitativeOfferComparisonStep1.resx">
+      <DependentUpon>QuantitativeOfferComparisonStep1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Faces\QuantitativeOfferComparison\QuantitativeOfferComparisonStep2.resx">
+      <DependentUpon>QuantitativeOfferComparisonStep2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Faces\QuantitativeOfferComparison\QuantitativeOfferComparisonStep3.resx">
+      <DependentUpon>QuantitativeOfferComparisonStep3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Faces\QuantitativeOfferComparison\QuantitativeOfferComparisonStep4.resx">
+      <DependentUpon>QuantitativeOfferComparisonStep4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Faces\QuantitativeOfferComparison\QuantitativeOfferComparisonTemplate.resx">
+      <DependentUpon>QuantitativeOfferComparisonTemplate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="UIElements\Sidebar.resx">
+      <DependentUpon>Sidebar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UIElements\Step.resx">
+      <DependentUpon>Step.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UIElements\UserInput.resx">
+      <DependentUpon>UserInput.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\greaterThan.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
