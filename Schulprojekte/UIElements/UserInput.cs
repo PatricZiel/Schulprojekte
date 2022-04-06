@@ -21,6 +21,9 @@ namespace Schulprojekte.UIElements
         Label lbl_name;
         public Control input_field;
 
+        String defaultValue = null;
+        Boolean validationSuccess = false;
+
         EventHandler inputAfterValidatoinFailed;
 
         public UserInput()
@@ -34,6 +37,18 @@ namespace Schulprojekte.UIElements
             InitializeInput();
 
             userInputName = nameFragment;
+
+            initializeErrorMessage("lbl_" + nameFragment + "Error", "Bitte gib " + label + " an");
+            initializeLabel("lbl_" + nameFragment, label);
+            initializeInputField("input_" + nameFragment, typeContant);
+        }
+        public UserInput(String nameFragment, String label, String typeContant, String defaultContent)
+        {
+            InitializeComponent();
+            InitializeInput();
+
+            userInputName = nameFragment;
+            defaultValue = defaultContent;
 
             initializeErrorMessage("lbl_" + nameFragment + "Error", "Bitte gib " + label + " an");
             initializeLabel("lbl_" + nameFragment, label);
@@ -54,7 +69,7 @@ namespace Schulprojekte.UIElements
 
             lbl_errorMessage.Dock = DockStyle.Top;
             lbl_errorMessage.Font = new Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            lbl_errorMessage.ForeColor = Color.White;
+            lbl_errorMessage.ForeColor = SystemColors.Control;
             lbl_errorMessage.Name = name;
             lbl_errorMessage.Size = new Size(700, 23);
             lbl_errorMessage.TabIndex = 3;
@@ -109,20 +124,34 @@ namespace Schulprojekte.UIElements
 
         public bool submit()
         {
-            bool validationSuccess = false;
-            switch (input_field)
+            if (defaultValue == null)
             {
-                case NumericUpDown numericUpDown:
-                    validationSuccess = ((NumericUpDown) input_field).Value > 0;
-                    break;
-                case TextBox textBox:
-                    validationSuccess = double.Parse(((TextBox)input_field).Text) > 0;
-                    break;
-                case ComboBox comboBox:
-                    validationSuccess = ((ComboBox)input_field).SelectedValue != "";
-                    break;
+                try
+                {
+                    switch (input_field)
+                    {
+                        case NumericUpDown numericUpDown:
+                            validationSuccess = ((NumericUpDown)input_field).Value > 0;
+                            break;
+                        case TextBox textBox:
+                            validationSuccess = double.Parse(((TextBox)input_field).Text) > 0;
+                            break;
+                        case ComboBox comboBox:
+                            validationSuccess = ((ComboBox)input_field).SelectedValue != "";
+                            break;
+                    }
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("UserInput Submit ist fehlgeschlagen");
+                    Console.WriteLine("Source: " + e.Source);
+                }
+            } else
+            {
+                return true;
             }
-            if(!validationSuccess) validationFailed();
+            
+            if (!validationSuccess) validationFailed();
             return validationSuccess;
         }
 
@@ -149,7 +178,7 @@ namespace Schulprojekte.UIElements
 
         private void inputAfterFailedValidation(object sender, EventArgs e)
         {
-            lbl_errorMessage.ForeColor = Color.White;
+            lbl_errorMessage.ForeColor = SystemColors.Control;
             switch (input_field)
             {
                 case NumericUpDown numericUpDown:
@@ -168,14 +197,24 @@ namespace Schulprojekte.UIElements
 
         public object getValue()
         {
-            switch (input_field)
+            if (validationSuccess)
             {
-                case NumericUpDown numericUpDown:
-                    return ((NumericUpDown)input_field).Value;
-                case TextBox textBox:
-                    return ((TextBox)input_field).Text;
-                case ComboBox comboItem:
-                    return ((ComboBox)input_field).SelectedItem;
+                switch (input_field)
+                {
+                    case NumericUpDown numericUpDown:
+                        return ((NumericUpDown)input_field).Value;
+                    case TextBox textBox:
+                        return ((TextBox)input_field).Text;
+                    case ComboBox comboItem:
+                        return ((ComboBox)input_field).SelectedItem;
+                }
+            }
+            else if (defaultValue != null)
+            {
+                return defaultValue;
+            } else
+            {
+                throw new Exception();
             }
             return null;
         }

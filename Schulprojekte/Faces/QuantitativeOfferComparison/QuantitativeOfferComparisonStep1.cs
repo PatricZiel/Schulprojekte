@@ -20,7 +20,7 @@ namespace Schulprojekte.Faces.QuantitativeOfferComparison
             step = Constants.CURRENT_SITE_STEP_ONE;
 
             inputs.Add(new UserInput(Constants.NAME_FRAGMENT_OFFER_COUNT, "Anzahl an Angeboten", Constants.INPUT_TYPE_NUMERIC_UP_DOWN));
-            inputs.Add(new UserInput(Constants.NAME_FRAGMENT_AMOUND, "Bestellmenge", Constants.INPUT_TYPE_NUMERIC_UP_DOWN));
+            inputs.Add(new UserInput(Constants.NAME_FRAGMENT_AMOUND, "Bestellmenge", Constants.INPUT_TYPE_NUMERIC_UP_DOWN, "1"));
             alignInputsFromTop();
             foreach(UserInput userInput in inputs)
             {
