@@ -52,6 +52,12 @@
     <Compile Include="Faces\Application.Designer.cs">
       <DependentUpon>Application.cs</DependentUpon>
     </Compile>
+    <Compile Include="Faces\CheckDigit\CheckDigitTemplate.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Faces\CheckDigit\CheckDigitTemplate.Designer.cs">
+      <DependentUpon>CheckDigitTemplate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Faces\Dashboard.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -122,6 +128,9 @@
     </Compile>
     <EmbeddedResource Include="Faces\Application.resx">
       <DependentUpon>Application.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Faces\CheckDigit\CheckDigitTemplate.resx">
+      <DependentUpon>CheckDigitTemplate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Faces\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>

@@ -10,5 +10,6 @@ namespace Schulprojekte.Resources
     {
         // Dashboard Button Text
         public const String DBT_QUANTITATIVE_OFFERCOMPARISON = "Quantitativer Angebotsvergleich";
+        public const String DBT_CHECK_DIGIT = "Prüfziffer";
     }
 }

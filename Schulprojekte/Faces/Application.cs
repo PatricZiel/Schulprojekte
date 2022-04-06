@@ -1,4 +1,5 @@
 ﻿using Schulprojekte.Faces;
+using Schulprojekte.Faces.CheckDigit;
 using Schulprojekte.Faces.QuantitativeOfferComparison;
 using Schulprojekte.Resources;
 using Schulprojekte.UIElements;
@@ -48,10 +49,17 @@ namespace Schulprojekte
         {
             List<GoToProjectButton> projectButtons = new List<GoToProjectButton>();
             GoToProjectButton projectButton;
+
             projectButton = new GoToProjectButton();
             projectButton.Name = "goToQuantitativeOfferComparison";
             projectButton.Text = Language_de.DBT_QUANTITATIVE_OFFERCOMPARISON;
             projectButton.destinationSite = new QuantitativeOfferComparisonTemplate();
+            projectButtons.Add(projectButton);
+
+            projectButton = new GoToProjectButton();
+            projectButton.Name = "goToCheckDigit";
+            projectButton.Text = Language_de.DBT_CHECK_DIGIT;
+            projectButton.destinationSite = new CheckDigitTemplate();
             projectButtons.Add(projectButton);
 
             return projectButtons;
