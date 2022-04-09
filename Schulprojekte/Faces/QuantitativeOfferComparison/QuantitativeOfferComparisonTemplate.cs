@@ -1,6 +1,7 @@
 ﻿using Schulprojekte.Handler;
 using Schulprojekte.Objekte;
 using Schulprojekte.Resources;
+using Schulprojekte.Resources.Language;
 using Schulprojekte.UIElements;
 using System;
 using System.Collections.Generic;
@@ -147,19 +148,25 @@ namespace Schulprojekte.Faces.QuantitativeOfferComparison
 
         private double getDeliveryDiscountByDeliverer(String deliverer)
         {
-            switch(deliverer)
+            if (deliverer.Equals(Language.DELIVERER_HERMES))
             {
-                case Constants.DELIVERER_HERMES: // Hermes
-                    return 1;
-                case Constants.DELIVERER_DHL: // DHL
-                    return 0;
-                case Constants.DELIVERER_DPD: // DPD
-                    return 2;
-                case Constants.DELIVERER_SELF: // Selbstabholung
-                    return 5;
+                return 1;
             }
+            else if (deliverer.Equals(Language.DELIVERER_DPD))
+            {
+                return 0;
+            }
+            else if (deliverer.Equals(Language.DELIVERER_SELF))
+            {
+                return 2;
+            }
+            else if (deliverer.Equals(Language.DELIVERER_DHL)) 
+            {
+                return 5;
+            }
+
             Console.WriteLine("QuantitativeOfferComparisonTemplate.getDeliveryDiscountByDeliverer(ComboItem). Deliverer out of Bounds: " + deliverer);
-            return 0;
+            throw new Exception();
         }
     }
 }

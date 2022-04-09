@@ -1,5 +1,6 @@
 ﻿using Schulprojekte.Objekte;
 using Schulprojekte.Resources;
+using Schulprojekte.Resources.Language;
 using Schulprojekte.UIElements;
 using System;
 using System.Collections.Generic;
@@ -24,18 +25,11 @@ namespace Schulprojekte.Faces.QuantitativeOfferComparison
 
             UserInput delivererComboBox = new UserInput(Constants.NAME_FRAGMENT_DELIVERY_DISCOUNT, "Lieferant", Constants.INPUT_TYPE_COMBO_BOX);
             
-            /*delivererComboBox.addComboBoxItems(new ComboItem[]
-            {
-                new ComboItem(1, "Hermes"),
-                new ComboItem(2, "DHL" ),
-                new ComboItem(3, "DPD" ),
-                new ComboItem(4, "Selbstabholung")
-            });*/
             ((ComboBox)delivererComboBox.input_field).Items.AddRange(new object[] {
-                Constants.DELIVERER_HERMES,
-                Constants.DELIVERER_DHL,
-                Constants.DELIVERER_DPD,
-                Constants.DELIVERER_SELF
+                Language.DELIVERER_HERMES,
+                Language.DELIVERER_DHL,
+                Language.DELIVERER_DPD,
+                Language.DELIVERER_SELF
             });
 
             inputs.Add(delivererComboBox);

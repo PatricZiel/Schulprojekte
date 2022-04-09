@@ -1,4 +1,5 @@
 ﻿using Schulprojekte.Resources;
+using Schulprojekte.Resources.Language;
 using Schulprojekte.UIElements;
 using System;
 using System.Collections.Generic;
@@ -19,8 +20,8 @@ namespace Schulprojekte.Faces.QuantitativeOfferComparison
             InitializeComponent();
             step = Constants.CURRENT_SITE_STEP_ONE;
 
-            inputs.Add(new UserInput(Constants.NAME_FRAGMENT_OFFER_COUNT, "Anzahl an Angeboten", Constants.INPUT_TYPE_NUMERIC_UP_DOWN));
-            inputs.Add(new UserInput(Constants.NAME_FRAGMENT_AMOUND, "Bestellmenge", Constants.INPUT_TYPE_NUMERIC_UP_DOWN, "1"));
+            inputs.Add(new UserInput(Constants.NAME_FRAGMENT_OFFER_COUNT, Language.OFFER_COUNT, Constants.INPUT_TYPE_NUMERIC_UP_DOWN));
+            inputs.Add(new UserInput(Constants.NAME_FRAGMENT_AMOUND, Language.DELIVERY_AMOUNT, Constants.INPUT_TYPE_NUMERIC_UP_DOWN, "1"));
             alignInputsFromTop();
             foreach(UserInput userInput in inputs)
             {

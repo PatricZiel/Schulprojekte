@@ -43,10 +43,10 @@ namespace Schulprojekte.UIElements
             this.pnl_toggleBar.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.pnl_toggleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(80)))), ((int)(((byte)(120)))));
             this.pnl_toggleBar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnl_toggleBar.Location = new System.Drawing.Point(180, 0);
+            this.pnl_toggleBar.Location = new System.Drawing.Point(270, 0);
             this.pnl_toggleBar.Margin = new System.Windows.Forms.Padding(0);
             this.pnl_toggleBar.Name = "pnl_toggleBar";
-            this.pnl_toggleBar.Size = new System.Drawing.Size(20, 600);
+            this.pnl_toggleBar.Size = new System.Drawing.Size(30, 923);
             this.pnl_toggleBar.TabIndex = 0;
             this.pnl_toggleBar.Click += new System.EventHandler(this.toggleSidebar);
             // 
@@ -56,10 +56,10 @@ namespace Schulprojekte.UIElements
             this.pnl_toggleIcon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(80)))), ((int)(((byte)(120)))));
             this.pnl_toggleIcon.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnl_toggleIcon.BackgroundImage")));
             this.pnl_toggleIcon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnl_toggleIcon.Location = new System.Drawing.Point(180, 570);
+            this.pnl_toggleIcon.Location = new System.Drawing.Point(270, 877);
             this.pnl_toggleIcon.Margin = new System.Windows.Forms.Padding(0);
             this.pnl_toggleIcon.Name = "pnl_toggleIcon";
-            this.pnl_toggleIcon.Size = new System.Drawing.Size(20, 30);
+            this.pnl_toggleIcon.Size = new System.Drawing.Size(30, 46);
             this.pnl_toggleIcon.TabIndex = 1;
             this.pnl_toggleIcon.Click += new System.EventHandler(this.toggleSidebar);
             // 
@@ -68,8 +68,9 @@ namespace Schulprojekte.UIElements
             this.pnl_sidebarContent.Controls.Add(this.pnl_sidebarContentHeader);
             this.pnl_sidebarContent.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnl_sidebarContent.Location = new System.Drawing.Point(0, 0);
+            this.pnl_sidebarContent.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pnl_sidebarContent.Name = "pnl_sidebarContent";
-            this.pnl_sidebarContent.Size = new System.Drawing.Size(180, 600);
+            this.pnl_sidebarContent.Size = new System.Drawing.Size(270, 923);
             this.pnl_sidebarContent.TabIndex = 2;
             // 
             // pnl_sidebarContentHeader
@@ -77,20 +78,22 @@ namespace Schulprojekte.UIElements
             this.pnl_sidebarContentHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(56)))), ((int)(((byte)(95)))));
             this.pnl_sidebarContentHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl_sidebarContentHeader.Location = new System.Drawing.Point(0, 0);
+            this.pnl_sidebarContentHeader.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pnl_sidebarContentHeader.Name = "pnl_sidebarContentHeader";
-            this.pnl_sidebarContentHeader.Size = new System.Drawing.Size(180, 100);
+            this.pnl_sidebarContentHeader.Size = new System.Drawing.Size(270, 154);
             this.pnl_sidebarContentHeader.TabIndex = 0;
             // 
             // Sidebar
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(64)))), ((int)(((byte)(105)))));
             this.Controls.Add(this.pnl_sidebarContent);
             this.Controls.Add(this.pnl_toggleIcon);
             this.Controls.Add(this.pnl_toggleBar);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Sidebar";
-            this.Size = new System.Drawing.Size(200, 600);
+            this.Size = new System.Drawing.Size(300, 923);
             this.SizeChanged += new System.EventHandler(this.onSidebarSizeChange);
             this.pnl_sidebarContent.ResumeLayout(false);
             this.ResumeLayout(false);

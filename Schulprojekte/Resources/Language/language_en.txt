@@ -1,0 +1,12 @@
+﻿// Dashboard Button Text
+dbt_quantitative_offer_comparison = Quantitative offer comparison
+dbt_check_digit = check digit
+
+// Deliverers
+deliverer_hermes = Hermes
+deliverer_dhl = DHL
+deliverer_dpd = DPD
+deliverer_self = self pickup
+
+offer_count = Offer count
+delivery_amount = Delivery discount

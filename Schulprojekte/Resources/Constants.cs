@@ -9,12 +9,16 @@ namespace Schulprojekte.Resources
 {
     internal class Constants
     {
+        //Global language
+        public const String GL_DE = "de";
+        public const String GL_EN = "en";
+
         // Color template
         //Dashboard
         public static Color COLORTEMPLATE_DASHBOARDBUTTON_BACKGROUND = Color.FromArgb(220, 220, 255);
-        //Sidebar
-        public static Color COLORTEMPLATE_SIDEBARBUTTON_BACKGROUND = Color.FromArgb(25, 100, 150);
-        public static Color COLORTEMPLATE_SIDEBARBUTTON_BACKGROUND_Selected = Color.FromArgb(18, 75, 115);
+         //Sidebar
+         public static Color COLORTEMPLATE_SIDEBARBUTTON_BACKGROUND = Color.FromArgb(25, 100, 150);
+         public static Color COLORTEMPLATE_SIDEBARBUTTON_BACKGROUND_Selected = Color.FromArgb(18, 75, 115);
 
         // Current site
         public const String CURRENT_SITE_STEP_ONE = "step1";
@@ -36,11 +40,5 @@ namespace Schulprojekte.Resources
         public const String NAME_FRAGMENT_DELIVERY_DISCOUNT = "deliveryDiscount";
         public const String NAME_FRAGMENT_DELIVERY_SKONTO = "deliverySkonto";
         public const String NAME_FRAGMENT_PURCHASE_COST = "purchaseCost";
-
-        // Deliverers
-        public const String DELIVERER_HERMES = "Hermes";
-        public const String DELIVERER_DHL = "DHL";
-        public const String DELIVERER_DPD = "DPD";
-        public const String DELIVERER_SELF = "Selbstabholung";
     }
 }

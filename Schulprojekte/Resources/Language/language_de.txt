@@ -1,0 +1,12 @@
+﻿// Dashboard Button Text
+dbt_quantitative_offer_comparison = Quantitativer Angebotsvergleich
+dbt_check_digit = Prüfziffer
+
+// Deliverers
+deliverer_hermes = Hermes
+deliverer_dhl = DHL
+deliverer_dpd = DPD
+deliverer_self = Selbstabholung
+
+offer_count = Anzahl an Angeboten
+delivery_amount = Bestellmenge

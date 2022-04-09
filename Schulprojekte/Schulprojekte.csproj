@@ -97,11 +97,12 @@
     <Compile Include="Handler\FacesHandler.cs" />
     <Compile Include="Handler\TypeHandler.cs" />
     <Compile Include="Objekte\ComboItem.cs" />
+    <Compile Include="Objekte\GeneralLanguage.cs" />
     <Compile Include="Objekte\QuantitativeOfferComparisonOfferInformation.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\Constants.cs" />
-    <Compile Include="Resources\Language_de.cs" />
+    <Compile Include="Resources\Language\Language.cs" />
     <Compile Include="UIElements\GoToProjectButton.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -178,13 +179,20 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Resources\syncfusionIcon.metrop" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Resources\Language\language_de.txt" />
+    <Content Include="Resources\Language\language_en.txt" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\greaterThan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\SyncfusionIcons\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

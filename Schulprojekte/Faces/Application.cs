@@ -1,10 +1,14 @@
 ﻿using Schulprojekte.Faces;
 using Schulprojekte.Faces.CheckDigit;
 using Schulprojekte.Faces.QuantitativeOfferComparison;
+using Schulprojekte.Objekte;
 using Schulprojekte.Resources;
+using Schulprojekte.Resources.Language;
 using Schulprojekte.UIElements;
 using System;
 using System.Collections.Generic;
+using System.Drawing.Text;
+using System.IO;
 using System.Windows.Forms;
 
 namespace Schulprojekte
@@ -13,9 +17,26 @@ namespace Schulprojekte
     {
         public Application()
         {
+            //Default language = german
+            GeneralLanguage.changeLanguage(Constants.GL_DE);
+            this.Paint += includeIconFont;
+
             InitializeComponent();
             sidebar.initSidebar(this);
             openDashboard();
+        }
+
+        private void includeIconFont(object sender, PaintEventArgs e)
+        {
+            PrivateFontCollection pfc = new PrivateFontCollection();
+            //Extracting icon fonts from the WF Fabric.ttf file and adding into system memory.
+            Stream fontAsStream = this.GetType().Assembly.GetManifestResourceStream("Schulprojekte.Resources.SyncfusionIcons.syncfusionIcon.ttf");
+            byte[] fontAsByte = new byte[fontAsStream.Length];
+            fontAsStream.Read(fontAsByte, 0, (int)fontAsStream.Length);
+            fontAsStream.Close();
+            IntPtr memPointer = System.Runtime.InteropServices.Marshal.AllocHGlobal(System.Runtime.InteropServices.Marshal.SizeOf(typeof(byte)) * fontAsByte.Length);
+            System.Runtime.InteropServices.Marshal.Copy(fontAsByte, 0, memPointer, fontAsByte.Length);
+            pfc.AddMemoryFont(memPointer, fontAsByte.Length);
         }
 
         // Öffnet die Dashboardseite
@@ -52,13 +73,13 @@ namespace Schulprojekte
 
             projectButton = new GoToProjectButton();
             projectButton.Name = "goToQuantitativeOfferComparison";
-            projectButton.Text = Language_de.DBT_QUANTITATIVE_OFFERCOMPARISON;
+            projectButton.Text = Language.DBT_QUANTITATIVE_OFFER_COMPARISON;
             projectButton.destinationSite = new QuantitativeOfferComparisonTemplate();
             projectButtons.Add(projectButton);
 
             projectButton = new GoToProjectButton();
             projectButton.Name = "goToCheckDigit";
-            projectButton.Text = Language_de.DBT_CHECK_DIGIT;
+            projectButton.Text = Language.DBT_CHECK_DIGIT;
             projectButton.destinationSite = new CheckDigitTemplate();
             projectButtons.Add(projectButton);
 
