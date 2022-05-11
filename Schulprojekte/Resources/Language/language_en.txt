@@ -8,5 +8,19 @@ deliverer_dhl = DHL
 deliverer_dpd = DPD
 deliverer_self = self pickup
 
+// Cuantitative Offer comparison
 offer_count = Offer count
 delivery_amount = Delivery discount
+
+// Check digit
+check_digit = Check digit
+check_the_check_digit = Check check-digit
+check_digit_correct_message = Given EAN-Code is correct
+check_digit_incorrect_message = Given EAN-Code is not correct
+
+// Semi General
+please_use_only_digits = Please use only digits as input
+length_is_not_expected = Input length not correct
+
+// General
+input_incorrect = Input incorrect

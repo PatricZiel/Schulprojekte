@@ -8,5 +8,19 @@ deliverer_dhl = DHL
 deliverer_dpd = DPD
 deliverer_self = Selbstabholung
 
+// Cuantitative Offer comparison
 offer_count = Anzahl an Angeboten
 delivery_amount = Bestellmenge
+
+// Check digit
+check_digit = Prüfziffer
+check_the_check_digit = Prüfziffer prüfen
+check_digit_correct_message = Der Angegebene EAN-Code ist Korrekt
+check_digit_incorrect_message = Der Angegebene EAN-Code ist nicht Korrekt
+
+// Semi General
+please_use_only_digits = Bitte nur Ziffern eingeben
+length_is_not_expected = Länge der Eingebe entspricht nicht dem erwarteten Wert
+
+// General
+input_incorrect = Eingabe fehlerhaft

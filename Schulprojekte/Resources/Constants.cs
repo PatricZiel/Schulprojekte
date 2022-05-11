@@ -25,6 +25,8 @@ namespace Schulprojekte.Resources
         public const String CURRENT_SITE_STEP_TWO = "step2";
         public const String CURRENT_SITE_STEP_THREE = "step3";
         public const String CURRENT_SITE_STEP_FOUR = "step4";
+        public const String CURRENT_SITE_STEP_EAN = "ean";
+        public const String CURRENT_SITE_STEP_IBAN = "iban";
 
         // Inputtype
         public const String INPUT_TYPE_NUMERIC_UP_DOWN = "num_up_down";
@@ -40,5 +42,7 @@ namespace Schulprojekte.Resources
         public const String NAME_FRAGMENT_DELIVERY_DISCOUNT = "deliveryDiscount";
         public const String NAME_FRAGMENT_DELIVERY_SKONTO = "deliverySkonto";
         public const String NAME_FRAGMENT_PURCHASE_COST = "purchaseCost";
+        //CheckDigit
+        public const String NAME_FRAGMENT_CHECK_DIGIT = "checkDigit";
     }
 }
