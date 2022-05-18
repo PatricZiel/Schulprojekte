@@ -24,7 +24,7 @@ namespace Schulprojekte.Faces.CheckDigit
             string ean = ((TextBox)inputs[0].input_field).Text;
 
             //check if contains only digits
-            if (!int.TryParse(ean, out _))
+            if (!long.TryParse(ean, out _))
             {
                 CheckdigitError(Language.INPUT_INCORRECT + ": " + Language.PLEASE_USE_ONLY_DIGITS);
                 return;
@@ -37,15 +37,15 @@ namespace Schulprojekte.Faces.CheckDigit
             }
 
             string eanprüf = ean[12].ToString();
-            int checksum = GetEAN(ean);
+            long checksum = GetEAN(ean);
 
-            int compareValue = 10 - checksum % 10;
+            long compareValue = 10 - checksum % 10;
             if(compareValue == 10)
             {
                 compareValue = 0;
             }
 
-            if (compareValue == int.Parse((eanprüf).ToString()))
+            if (compareValue == long.Parse(eanprüf))
             {
                 lbl_resultMessage.Text = Language.CHECK_DIGIT_CORRECT_MESSAGE;
                 lbl_resultMessage.ForeColor = Color.Green;

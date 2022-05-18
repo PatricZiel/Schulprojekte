@@ -7,6 +7,7 @@ using Schulprojekte.Resources.Language;
 using Schulprojekte.UIElements;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Drawing.Text;
 using System.IO;
 using System.Windows.Forms;
@@ -15,6 +16,11 @@ namespace Schulprojekte
 {
     public partial class Application : Form
     {
+        int mouseXLocation;
+        int mouseYLocation;
+        Boolean verschoben = false;
+
+        MouseEventHandler meh = null;
         public Application()
         {
             //Default language = german
@@ -24,6 +30,8 @@ namespace Schulprojekte
             InitializeComponent();
             sidebar.initSidebar(this);
             openDashboard();
+
+            meh = new MouseEventHandler(lbl_appHeader_MouseMove);
         }
 
         private void includeIconFont(object sender, PaintEventArgs e)
@@ -84,6 +92,34 @@ namespace Schulprojekte
             projectButtons.Add(projectButton);
 
             return projectButtons;
+        }
+
+        private void lbl_appHeader_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (verschoben)
+            {
+                int xVerschiebung = mouseXLocation - Cursor.Position.X;
+                int yVerschiebung = mouseYLocation - Cursor.Position.Y;
+
+                this.Left -= xVerschiebung;
+                this.Top -= yVerschiebung;
+            }
+
+            mouseXLocation = Cursor.Position.X;
+            mouseYLocation = Cursor.Position.Y;
+
+            verschoben = true;
+        }
+
+        private void lbl_appHeader_MouseDown(object sender, MouseEventArgs e)
+        {
+            this.lbl_appHeader.MouseMove += meh;
+        }
+
+        private void lbl_appHeader_MouseUp(object sender, MouseEventArgs e)
+        {
+            this.lbl_appHeader.MouseMove -= meh;
+            verschoben = false;
         }
     }
 }

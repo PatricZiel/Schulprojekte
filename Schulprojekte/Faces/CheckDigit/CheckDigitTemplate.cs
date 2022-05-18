@@ -46,7 +46,6 @@ namespace Schulprojekte.Faces.CheckDigit
          * TabChangeButton - definiert den hinzuzufügenden Button
          * buttonNumber - Ergebnis eines zählers um die Button-Position zu bestimmen 
          *                  - Startet bei 0
-         *                  - Für einen Maximalwert von 7 ausgelegt
          */
         private void addTabChangeButton(TabChangeButton tabChangeButton, int buttonNumber)
         {
@@ -72,7 +71,7 @@ namespace Schulprojekte.Faces.CheckDigit
 
             tabChangeButton.Click += new System.EventHandler(openSiteFromButton);
 
-            Controls.Add(tabChangeButton);
+            pnl_digitStepSwitch.Controls.Add(tabChangeButton);
         }
 
         private void openSiteFromButton(object sender, EventArgs e)

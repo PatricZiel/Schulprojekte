@@ -59,6 +59,8 @@
             this.lbl_appHeader.TabIndex = 0;
             this.lbl_appHeader.Text = "Schulprojekte";
             this.lbl_appHeader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_appHeader.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lbl_appHeader_MouseDown);
+            this.lbl_appHeader.MouseUp += new System.Windows.Forms.MouseEventHandler(this.lbl_appHeader_MouseUp);
             // 
             // pnl_appMainPart
             // 
