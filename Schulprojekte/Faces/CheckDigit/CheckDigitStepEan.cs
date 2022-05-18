@@ -7,7 +7,7 @@ using Schulprojekte.UIElements;
 
 namespace Schulprojekte.Faces.CheckDigit
 {
-    public partial class CheckDigitStepEan : Step
+    public partial class CheckDigitStepEan : CheckDigitStep
     {
         public CheckDigitStepEan()
         {
@@ -22,9 +22,11 @@ namespace Schulprojekte.Faces.CheckDigit
             }
             
             btn_validateButton.Text = Language.CHECK_THE_CHECK_DIGIT;
+
+            fillInputs("", "");
         }
 
-        private void btn_validateButton_Click(object sender, System.EventArgs e)
+        protected override void btn_validateButton_Click(object sender, System.EventArgs e)
         {
             //get user input value
             string ean = ((TextBox)inputs[0].input_field).Text;
@@ -80,12 +82,6 @@ namespace Schulprojekte.Faces.CheckDigit
                 }
             }
             return result;
-        }
-
-        private void CheckdigitError(String errorMessage)
-        {
-            lbl_resultMessage.Text = errorMessage;
-            lbl_resultMessage.ForeColor = Color.Red;
         }
     }
 }

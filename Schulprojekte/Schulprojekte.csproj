@@ -52,6 +52,12 @@
     <Compile Include="Faces\Application.Designer.cs">
       <DependentUpon>Application.cs</DependentUpon>
     </Compile>
+    <Compile Include="Faces\CheckDigit\CheckDigitStep.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Faces\CheckDigit\CheckDigitStep.Designer.cs">
+      <DependentUpon>CheckDigitStep.cs</DependentUpon>
+    </Compile>
     <Compile Include="Faces\CheckDigit\CheckDigitStepEan.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -106,6 +112,7 @@
     <Compile Include="Faces\QuantitativeOfferComparison\QuantitativeOfferComparisonTemplate.Designer.cs">
       <DependentUpon>QuantitativeOfferComparisonTemplate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Handler\CheckDigitHandler.cs" />
     <Compile Include="Handler\FacesHandler.cs" />
     <Compile Include="Handler\TypeHandler.cs" />
     <Compile Include="Objekte\ComboItem.cs" />

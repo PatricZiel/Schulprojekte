@@ -13,16 +13,25 @@ namespace Schulprojekte.Faces.CheckDigit
 {
     public partial class CheckDigitTemplate : UserControl
     {
-        Step step = new CheckDigitStepEan();
+        Dictionary<string, Step> stepList = new Dictionary<string, Step>();
+        String currentStep = "EAN";
+
         public CheckDigitTemplate()
         {
             InitializeComponent();
+            initStepList();
             StartFirstSite();
         }
 
         private void StartFirstSite()
         {
-            pnl_templateContent.Controls.Add(step);
+            pnl_templateContent.Controls.Add(stepList[currentStep]);
+        }
+
+        private void initStepList()
+        {
+            stepList.Add("EAN", new CheckDigitStepEan());
+            stepList.Add("IBAN", new CheckDigitStepIBAN());
         }
     }
 }
