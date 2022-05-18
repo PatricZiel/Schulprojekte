@@ -121,5 +121,10 @@ namespace Schulprojekte
             this.lbl_appHeader.MouseMove -= meh;
             verschoben = false;
         }
+
+        private void onClose(object sender, EventArgs e)
+        {
+            System.Environment.Exit(0);
+        }
     }
 }
