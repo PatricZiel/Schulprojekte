@@ -32,6 +32,35 @@ namespace Schulprojekte.Faces.CheckDigit
 
         private void btn_validateButton_Click(object sender, System.EventArgs e)
         {
+            /*
+            string iban = "DE88 2008 0000 0970 3757 00";
+            string modifiedIban = "";
+            string pruefziffer = "";
+            int rest = 0;
+            int nextrest = 0;
+            int lastrest = 0;
+            int valuedPruefziffer = 0;
+
+            Dictionary<string, int> countries = new Dictionary<string, int>();
+            countries.Add("DE", 1314);
+
+            modifiedIban = iban.Replace(" ", "");
+            modifiedIban = modifiedIban.Replace("-", "");
+            pruefziffer = modifiedIban.Substring(2,2);
+
+            modifiedIban = modifiedIban.Remove(0, 4);
+            modifiedIban += countries["DE"] + "00"; 
+        
+
+        
+            rest = Int32.Parse(modifiedIban.Substring(0, 9)) % 97;
+            nextrest = Int32.Parse(rest.ToString() + modifiedIban.Substring(9, 8)) % 97;
+            lastrest = Int32.Parse(nextrest.ToString() + modifiedIban.Substring(17, 7)) % 97;
+            valuedPruefziffer = 98 - lastrest;
+
+
+            Console.WriteLine(pruefziffer == valuedPruefziffer.ToString());
+            */
 
         }
     }
