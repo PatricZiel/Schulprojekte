@@ -24,6 +24,11 @@ namespace Schulprojekte.Faces.CheckDigit
         public CheckDigitStep()
         {
             InitializeComponent();
+        }
+
+        protected void updateInputs()
+        {
+            inputs = new List<UserInput>();
 
             inputs.Add(new UserInput(userinputNameFragment, userinputLabel, userinputInputtype));
             alignInputsFromTop();

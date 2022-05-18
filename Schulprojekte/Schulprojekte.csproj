@@ -140,6 +140,12 @@
     <Compile Include="UIElements\Step.Designer.cs">
       <DependentUpon>Step.cs</DependentUpon>
     </Compile>
+    <Compile Include="UIElements\TabChangeButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UIElements\TabChangeButton.Designer.cs">
+      <DependentUpon>TabChangeButton.cs</DependentUpon>
+    </Compile>
     <Compile Include="UIElements\UserInput.cs">
       <SubType>UserControl</SubType>
     </Compile>

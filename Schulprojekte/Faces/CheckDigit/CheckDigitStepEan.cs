@@ -13,17 +13,9 @@ namespace Schulprojekte.Faces.CheckDigit
         {
             InitializeComponent();
             step = Constants.CURRENT_SITE_STEP_EAN;
-            
-            inputs.Add(new UserInput(Constants.NAME_FRAGMENT_CHECK_DIGIT, Language.CHECK_DIGIT, Constants.INPUT_TYPE_TEXT_BOX));
-            alignInputsFromTop();
-            foreach (UserInput userInput in inputs)
-            {
-                pnl_inputs.Controls.Add(userInput);
-            }
-            
-            btn_validateButton.Text = Language.CHECK_THE_CHECK_DIGIT;
 
-            fillInputs("", "");
+            fillInputs(Language.CHECK_DIGIT, Constants.NAME_FRAGMENT_CHECK_DIGIT);
+            updateInputs();
         }
 
         protected override void btn_validateButton_Click(object sender, System.EventArgs e)

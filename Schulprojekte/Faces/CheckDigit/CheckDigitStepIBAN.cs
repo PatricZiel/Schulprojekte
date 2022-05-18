@@ -23,6 +23,10 @@ namespace Schulprojekte.Faces.CheckDigit
         {
             InitializeComponent();
             step = Constants.CURRENT_SITE_STEP_IBAN;
+
+            fillInputs(Language.CHECK_DIGIT, Constants.NAME_FRAGMENT_CHECK_DIGIT);
+            updateInputs();
+
             InitializeCountries();
         }
 
@@ -32,6 +36,7 @@ namespace Schulprojekte.Faces.CheckDigit
 
             if(errorMessage.Length > 0)
             {
+                CheckdigitError("FEHLER");
                 // Errormessage in oberfläche ausgeben
             } else
             {
