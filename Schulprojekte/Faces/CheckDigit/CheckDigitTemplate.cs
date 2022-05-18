@@ -79,7 +79,12 @@ namespace Schulprojekte.Faces.CheckDigit
             TabChangeButton projectButton = (TabChangeButton)sender;
             openSite(projectButton.destinationSite);
 
-            //lbl_appHeader.Text = projectButton.Text;
+            lbl_contentHeader.Text = projectButton.Text;
+
+            foreach (TabChangeButton tabChangeButton in tabChangeButtons)
+            {
+                tabChangeButton.setSelected(tabChangeButton.Name == projectButton.Name);
+            }
         }
 
         // Öffnet die Seite/den Tab im dafür vorgesehenem Bereich
