@@ -33,6 +33,7 @@
             this.pnl_appMainPart = new System.Windows.Forms.Panel();
             this.pnl_siteContent = new System.Windows.Forms.Panel();
             this.sidebar = new Schulprojekte.UIElements.Sidebar();
+            this.closeButton = new System.Windows.Forms.Button();
             this.pnl_appHeader.SuspendLayout();
             this.pnl_appMainPart.SuspendLayout();
             this.SuspendLayout();
@@ -40,6 +41,7 @@
             // pnl_appHeader
             // 
             this.pnl_appHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(64)))), ((int)(((byte)(105)))));
+            this.pnl_appHeader.Controls.Add(this.closeButton);
             this.pnl_appHeader.Controls.Add(this.lbl_appHeader);
             this.pnl_appHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl_appHeader.Location = new System.Drawing.Point(0, 0);
@@ -90,6 +92,18 @@
             this.sidebar.Size = new System.Drawing.Size(20, 600);
             this.sidebar.TabIndex = 4;
             // 
+            // closeButton
+            // 
+            this.closeButton.BackColor = System.Drawing.Color.White;
+            this.closeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.closeButton.Location = new System.Drawing.Point(944, 4);
+            this.closeButton.Name = "closeButton";
+            this.closeButton.Size = new System.Drawing.Size(30, 30);
+            this.closeButton.TabIndex = 1;
+            this.closeButton.Text = "X";
+            this.closeButton.UseVisualStyleBackColor = false;
+            this.closeButton.Click += new System.EventHandler(this.onClose);
+            // 
             // Application
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -114,6 +128,7 @@
         private System.Windows.Forms.Panel pnl_appMainPart;
         private System.Windows.Forms.Panel pnl_siteContent;
         private UIElements.Sidebar sidebar;
+        private System.Windows.Forms.Button closeButton;
     }
 }
 
