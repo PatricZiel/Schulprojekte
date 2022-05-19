@@ -1,4 +1,5 @@
 ﻿using Schulprojekte.Resources;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace Schulprojekte.UIElements
@@ -21,11 +22,13 @@ namespace Schulprojekte.UIElements
 
                 if (selected)
                 {
-                    BackColor = Constants.COLORTEMPLATE_SIDEBARBUTTON_BACKGROUND_Selected;
+                    BackColor = Constants.COLORTEMPLATE_TABVIEWBUTTON_BACKGROUND_SELECTED;
+                    ForeColor = Constants.COLORTEMPLATE_WHITE;
                 }
                 else
                 {
-                    BackColor = Constants.COLORTEMPLATE_SIDEBARBUTTON_BACKGROUND;
+                    BackColor = Constants.COLORTEMPLATE_TABVIEWBUTTON_BACKGROUND;
+                    ForeColor = Constants.COLORTEMPLATE_BLACK;
                 }
             }
         }

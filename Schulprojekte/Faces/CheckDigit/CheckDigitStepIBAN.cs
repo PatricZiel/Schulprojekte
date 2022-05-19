@@ -16,7 +16,6 @@ namespace Schulprojekte.Faces.CheckDigit
 {
     public partial class CheckDigitStepIBAN : CheckDigitStep
     {
-        String iban = "";
         Dictionary<string, int> countries = new Dictionary<string, int>();
 
         public CheckDigitStepIBAN()
@@ -24,7 +23,7 @@ namespace Schulprojekte.Faces.CheckDigit
             InitializeComponent();
             step = Constants.CURRENT_SITE_STEP_IBAN;
 
-            fillInputs(Language.CHECK_DIGIT, Constants.NAME_FRAGMENT_CHECK_DIGIT);
+            fillInputs(Language.CHECK_DIGIT_IBAN, Constants.NAME_FRAGMENT_CHECK_DIGIT);
             updateInputs();
 
             InitializeCountries();
@@ -32,15 +31,20 @@ namespace Schulprojekte.Faces.CheckDigit
 
         protected override void btn_validateButton_Click(object sender, System.EventArgs e)
         {
-            String errorMessage = CheckDigitHandler.checkIban(iban, countries);
+            string iban;
+            if(inputs[0].submit(false))
+            {
+                iban = (string)inputs[0].getValue();
+            
+                String errorMessage = CheckDigitHandler.checkIban(iban, countries);
 
-            if(errorMessage.Length > 0)
-            {
-                CheckdigitError("FEHLER");
-                // Errormessage in oberfläche ausgeben
-            } else
-            {
-                // Checkdigit gültig
+                if(errorMessage.Length > 0)
+                {
+                    CheckdigitError(errorMessage);
+                } else
+                {
+                    // Checkdigit gültig
+                }
             }
         }
 

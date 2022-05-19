@@ -14,11 +14,17 @@ namespace Schulprojekte.Resources
         public const String GL_EN = "en";
 
         // Color template
+        // Default Colors
+        public static Color COLORTEMPLATE_WHITE = Color.FromArgb(255, 255, 255);
+        public static Color COLORTEMPLATE_BLACK = Color.FromArgb(0, 0, 0);
         //Dashboard
         public static Color COLORTEMPLATE_DASHBOARDBUTTON_BACKGROUND = Color.FromArgb(220, 220, 255);
-         //Sidebar
-         public static Color COLORTEMPLATE_SIDEBARBUTTON_BACKGROUND = Color.FromArgb(25, 100, 150);
-         public static Color COLORTEMPLATE_SIDEBARBUTTON_BACKGROUND_Selected = Color.FromArgb(18, 75, 115);
+        //Sidebar
+        public static Color COLORTEMPLATE_SIDEBARBUTTON_BACKGROUND = Color.FromArgb(25, 100, 150);
+        public static Color COLORTEMPLATE_SIDEBARBUTTON_BACKGROUND_SELECTED = Color.FromArgb(18, 75, 115);
+        // Custom tabview buttons
+        public static Color COLORTEMPLATE_TABVIEWBUTTON_BACKGROUND = Color.FromArgb(225, 225, 225);
+        public static Color COLORTEMPLATE_TABVIEWBUTTON_BACKGROUND_SELECTED = Color.FromArgb(25, 100, 150);
 
         // Current site
         public const String CURRENT_SITE_STEP_ONE = "step1";

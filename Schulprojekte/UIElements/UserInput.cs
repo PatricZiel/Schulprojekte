@@ -124,6 +124,11 @@ namespace Schulprojekte.UIElements
 
         public bool submit()
         {
+            return submit(true);
+        }
+
+        public bool submit(bool numericExpected)
+        {
             if (defaultValue == null)
             {
                 try
@@ -134,7 +139,13 @@ namespace Schulprojekte.UIElements
                             validationSuccess = ((NumericUpDown)input_field).Value > 0;
                             break;
                         case TextBox textBox:
-                            validationSuccess = double.Parse(((TextBox)input_field).Text) > 0;
+                            if(numericExpected)
+                            {
+                                validationSuccess = double.Parse(((TextBox)input_field).Text) > 0;
+                            } else
+                            {
+                                validationSuccess = ((TextBox)input_field).Text.Length > 0;
+                            }
                             break;
                         case ComboBox comboBox:
                             validationSuccess = ((ComboBox)input_field).SelectedValue != "";

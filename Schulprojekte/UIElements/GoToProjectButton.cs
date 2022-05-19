@@ -21,7 +21,7 @@ namespace Schulprojekte.UIElements
 
                 if (selected)
                 {
-                    BackColor = Constants.COLORTEMPLATE_SIDEBARBUTTON_BACKGROUND_Selected;
+                    BackColor = Constants.COLORTEMPLATE_SIDEBARBUTTON_BACKGROUND_SELECTED;
                 }
                 else
                 {

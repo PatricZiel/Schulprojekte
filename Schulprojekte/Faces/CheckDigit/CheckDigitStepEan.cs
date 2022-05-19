@@ -14,7 +14,7 @@ namespace Schulprojekte.Faces.CheckDigit
             InitializeComponent();
             step = Constants.CURRENT_SITE_STEP_EAN;
 
-            fillInputs(Language.CHECK_DIGIT, Constants.NAME_FRAGMENT_CHECK_DIGIT);
+            fillInputs(Language.CHECK_DIGIT_EAN, Constants.NAME_FRAGMENT_CHECK_DIGIT);
             updateInputs();
         }
 

@@ -14,9 +14,14 @@ delivery_amount = Bestellmenge
 
 // Check digit
 check_digit = Prüfziffer
+check_digit_ean = Prüfziffer EAN
+check_digit_iban = Prüfziffer IBAN
 check_the_check_digit = Prüfziffer prüfen
 check_digit_correct_message = Der Angegebene EAN-Code ist Korrekt
 check_digit_incorrect_message = Der Angegebene EAN-Code ist nicht Korrekt
+check_digit_error_no_language_support = Land nicht unterstützt
+check_digit_error_iban_empty = iban nicht befüllt
+check_digit_error_incorrect = Prüfziffer passt nicht
 
 // Semi General
 please_use_only_digits = Bitte nur Ziffern eingeben

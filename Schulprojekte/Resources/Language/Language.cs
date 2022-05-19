@@ -18,9 +18,14 @@ namespace Schulprojekte.Resources.Language
         public static String OFFER_COUNT = GeneralLanguage.GetTranslationByKey("offer_count");
         public static String DELIVERY_AMOUNT = GeneralLanguage.GetTranslationByKey("delivery_amount");
         public static String CHECK_DIGIT = GeneralLanguage.GetTranslationByKey("check_digit");
+        public static String CHECK_DIGIT_EAN = GeneralLanguage.GetTranslationByKey("check_digit_ean");
+        public static String CHECK_DIGIT_IBAN = GeneralLanguage.GetTranslationByKey("check_digit_iban");
         public static String CHECK_THE_CHECK_DIGIT = GeneralLanguage.GetTranslationByKey("check_the_check_digit");
         public static String CHECK_DIGIT_CORRECT_MESSAGE = GeneralLanguage.GetTranslationByKey("check_digit_correct_message");
         public static String CHECK_DIGIT_INCORRECT_MESSAGE = GeneralLanguage.GetTranslationByKey("check_digit_incorrect_message");
+        public static String CHECK_DIGIT_ERROR_NO_LANGUAGE_SUPPORT = GeneralLanguage.GetTranslationByKey("check_digit_error_no_language_support");
+        public static String CHECK_DIGIT_ERROR_IBAN_EMPTY = GeneralLanguage.GetTranslationByKey("check_digit_error_iban_empty");
+        public static String CHECK_DIGIT_ERROR_INCORRECT = GeneralLanguage.GetTranslationByKey("check_digit_error_incorrect");
 
         // Semi General
         public static String PLEASE_USE_ONLY_DIGITS = GeneralLanguage.GetTranslationByKey("please_use_only_digits"); 

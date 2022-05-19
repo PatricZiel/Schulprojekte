@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Schulprojekte.Resources.Language;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,12 +15,12 @@ namespace Schulprojekte.Handler
             Boolean validation = true;
             if (iban.Equals(""))
             {
-                return "iban nicht befüllt";
+                return Language.CHECK_DIGIT_ERROR_IBAN_EMPTY;
                 // Fehlermeldung: iban nicht befüllt
             }
             else if (!countries.ContainsKey(iban.Substring(0, 2)))
             {
-                return "Land nicht unterstützt";
+                return Language.CHECK_DIGIT_ERROR_NO_LANGUAGE_SUPPORT;
                 // Fehlermeldung: Land nicht unterstützt
             }
 
@@ -30,10 +31,10 @@ namespace Schulprojekte.Handler
 
             string modifiedIban = "";
             string pruefziffer = "";
-            int rest = 0;
-            int nextrest = 0;
-            int lastrest = 0;
-            int valuedPruefziffer = 0;
+            long rest = 0;
+            long nextrest = 0;
+            long lastrest = 0;
+            long valuedPruefziffer = 0;
 
             modifiedIban = iban.Replace(" ", "");
             modifiedIban = modifiedIban.Replace("-", "");
@@ -44,14 +45,14 @@ namespace Schulprojekte.Handler
 
 
 
-            rest = Int32.Parse(modifiedIban.Substring(0, 9)) % 97;
-            nextrest = Int32.Parse(rest.ToString() + modifiedIban.Substring(9, 8)) % 97;
-            lastrest = Int32.Parse(nextrest.ToString() + modifiedIban.Substring(17, 7)) % 97;
+            rest = long.Parse(modifiedIban.Substring(0, 9)) % 97;
+            nextrest = long.Parse(rest.ToString() + modifiedIban.Substring(9, 8)) % 97;
+            lastrest = long.Parse(nextrest.ToString() + modifiedIban.Substring(17, 7)) % 97;
             valuedPruefziffer = 98 - lastrest;
 
             if(pruefziffer != valuedPruefziffer.ToString())
             {
-                //errorMessage = ""
+                errorMessage = Language.CHECK_DIGIT_ERROR_INCORRECT;
             }
 
             return errorMessage;
