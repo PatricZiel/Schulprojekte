@@ -38,26 +38,25 @@
             // pnl_inputs
             // 
             this.pnl_inputs.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnl_inputs.Location = new System.Drawing.Point(0, 77);
-            this.pnl_inputs.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pnl_inputs.Location = new System.Drawing.Point(0, 50);
             this.pnl_inputs.Name = "pnl_inputs";
-            this.pnl_inputs.Size = new System.Drawing.Size(1050, 185);
+            this.pnl_inputs.Size = new System.Drawing.Size(700, 120);
             this.pnl_inputs.TabIndex = 6;
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.pnl_inputs);
-            this.panel1.Location = new System.Drawing.Point(225, 77);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panel1.Location = new System.Drawing.Point(150, 50);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1050, 262);
+            this.panel1.Size = new System.Drawing.Size(700, 170);
             this.panel1.TabIndex = 8;
             // 
             // btn_validateButton
             // 
-            this.btn_validateButton.Location = new System.Drawing.Point(225, 347);
+            this.btn_validateButton.Location = new System.Drawing.Point(150, 226);
+            this.btn_validateButton.Margin = new System.Windows.Forms.Padding(2);
             this.btn_validateButton.Name = "btn_validateButton";
-            this.btn_validateButton.Size = new System.Drawing.Size(133, 37);
+            this.btn_validateButton.Size = new System.Drawing.Size(89, 24);
             this.btn_validateButton.TabIndex = 9;
             this.btn_validateButton.UseVisualStyleBackColor = true;
             this.btn_validateButton.Click += new System.EventHandler(this.btn_validateButton_Click);
@@ -65,23 +64,25 @@
             // lbl_resultMessage
             // 
             this.lbl_resultMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_resultMessage.Location = new System.Drawing.Point(383, 347);
+            this.lbl_resultMessage.Location = new System.Drawing.Point(255, 226);
+            this.lbl_resultMessage.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_resultMessage.Name = "lbl_resultMessage";
-            this.lbl_resultMessage.Size = new System.Drawing.Size(892, 98);
+            this.lbl_resultMessage.Size = new System.Drawing.Size(595, 64);
             this.lbl_resultMessage.TabIndex = 10;
             // 
             // CheckDigitStep
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.lbl_resultMessage);
             this.Controls.Add(this.btn_validateButton);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "CheckDigitStep";
-            this.Size = new System.Drawing.Size(1470, 692);
+            this.Size = new System.Drawing.Size(980, 450);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
+
         }
 
         #endregion

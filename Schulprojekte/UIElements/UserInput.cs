@@ -120,7 +120,6 @@ namespace Schulprojekte.UIElements
 
             inputBottomPanel.Controls.Add(input_field);
         }
-        //input_field.ValueChanged += new System.EventHandler(UserInput_Load);N
 
         public bool submit()
         {

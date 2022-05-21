@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Schulprojekte.Handler;
+using Schulprojekte.Objekte;
 using Schulprojekte.Resources;
 using Schulprojekte.Resources.Language;
 using Schulprojekte.UIElements;
@@ -27,6 +28,7 @@ namespace Schulprojekte.Faces.CheckDigit
             updateInputs();
 
             InitializeCountries();
+            initTooltipText();
         }
 
         protected override void btn_validateButton_Click(object sender, System.EventArgs e)
@@ -43,7 +45,7 @@ namespace Schulprojekte.Faces.CheckDigit
                     CheckdigitError(errorMessage);
                 } else
                 {
-                    // Checkdigit gültig
+                    CheckdigitSuccess(Language.CHECK_DIGIT_CORRECT_MESSAGE_IBAN);
                 }
             }
         }
@@ -51,6 +53,27 @@ namespace Schulprojekte.Faces.CheckDigit
         private void InitializeCountries()
         {
             countries.Add("DE", 1314);
+        }
+
+        private void initTooltipText()
+        {
+            string lineBreak = "\n";
+            string toolTipText =
+                "IBAN" + lineBreak
+              + "Bitte gib eine vollständige IBAN ein." + lineBreak
+              + "Mindestens 22 Zeichen eingeben" + lineBreak
+              + "Unterstützte Sprachen: ";
+            foreach (KeyValuePair<string, int> entry in countries)
+            {
+                string languageAbbreviation = "language_for_abbreviation_";
+                languageAbbreviation += entry.Key.ToLower();
+                string language = GeneralLanguage.GetTranslationByKey(languageAbbreviation);
+
+                toolTipText += lineBreak;
+                toolTipText += " - ";
+                toolTipText += StringHandler.firstLetterUpperCase(language);
+            }
+            ActivateToolTip(toolTipText);
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+using Schulprojekte.Handler;
 using Schulprojekte.Resources;
 using Schulprojekte.Resources.Language;
 using Schulprojekte.UIElements;
@@ -22,58 +23,17 @@ namespace Schulprojekte.Faces.CheckDigit
         {
             //get user input value
             string ean = ((TextBox)inputs[0].input_field).Text;
+            
+            string methodReply = CheckDigitHandler.checkEan(ean);
 
-            //check if contains only digits
-            if (!long.TryParse(ean, out _))
+            if(methodReply.Length > 0)
             {
-                CheckdigitError(Language.INPUT_INCORRECT + ": " + Language.PLEASE_USE_ONLY_DIGITS);
-                return;
-            }
-
-            if(ean.Length != 13)
-            { 
-                CheckdigitError(Language.INPUT_INCORRECT + ": " + Language.LENGTH_IS_NOT_EXPECTED + ": 13");
-                return;
-            }
-
-            string eanprüf = ean[12].ToString();
-            long checksum = GetEAN(ean);
-
-            long compareValue = 10 - checksum % 10;
-            if(compareValue == 10)
-            {
-                compareValue = 0;
-            }
-
-            if (compareValue == long.Parse(eanprüf))
-            {
-                lbl_resultMessage.Text = Language.CHECK_DIGIT_CORRECT_MESSAGE;
-                lbl_resultMessage.ForeColor = Color.Green;
+                CheckdigitError(methodReply);
             }
             else
             {
-                CheckdigitError(Language.CHECK_DIGIT_INCORRECT_MESSAGE);
+                CheckdigitSuccess(Language.CHECK_DIGIT_CORRECT_MESSAGE_EAN);
             }
-        }
-
-        private int GetEAN(string eannr)
-        {
-            int result = 0;
-            string eanAsString = eannr.ToString();
-            for (int i = 0; i < (eanAsString.Length - 1); i++)
-            {
-                if (i % 2 > 0)
-                {
-                    result += int.Parse(eanAsString[i].ToString()) * 3;
-                    //* 3
-                }
-                else
-                {
-                    result += int.Parse(eanAsString[i].ToString()) * 1;
-                    //* 1
-                }
-            }
-            return result;
         }
     }
 }

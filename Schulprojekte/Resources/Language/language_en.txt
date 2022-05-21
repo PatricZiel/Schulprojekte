@@ -17,11 +17,18 @@ check_digit = Check digit
 check_digit_ean = Check digit EAN
 check_digit_iban = Check digit IBAN
 check_the_check_digit = Check check-digit
-check_digit_correct_message = Given EAN-Code is correct
-check_digit_incorrect_message = Given EAN-Code is not correct
+check_digit_correct_message = Given Code is correct
+check_digit_correct_message_ean = Given EAN is correct
+check_digit_correct_message_iban = Given IBAN is correct
+check_digit_incorrect_message = Given Code is not correct
+check_digit_incorrect_message_ean = Given EAN is not correct
+check_digit_incorrect_message_iban = Given IBAN is not correct
+check_digit_error_ean_empty = Please enter EAN first
 check_digit_error_no_language_support = Language not supported
-check_digit_error_iban_empty = please enter IBAN first
-check_digit_error_incorrect = Prüfziffer passt nicht
+check_digit_error_iban_empty = Please enter IBAN first
+check_digit_error_iban_length_unexpected = Please enter an IBAN with 22 characters
+check_digit_error_incorrect = Check digit incorrect
+
 
 // Semi General
 please_use_only_digits = Please use only digits as input
@@ -29,3 +36,6 @@ length_is_not_expected = Input length not correct
 
 // General
 input_incorrect = Input incorrect
+// Language for abreviation
+language_for_abbreviation_en = english
+language_for_abbreviation_de = german

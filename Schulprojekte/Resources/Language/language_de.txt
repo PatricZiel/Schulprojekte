@@ -17,10 +17,16 @@ check_digit = Prüfziffer
 check_digit_ean = Prüfziffer EAN
 check_digit_iban = Prüfziffer IBAN
 check_the_check_digit = Prüfziffer prüfen
-check_digit_correct_message = Der Angegebene EAN-Code ist Korrekt
-check_digit_incorrect_message = Der Angegebene EAN-Code ist nicht Korrekt
+check_digit_correct_message = Der Angegebene Code ist Korrekt
+check_digit_correct_message_ean = Die Angegebene EAN ist Korrekt
+check_digit_correct_message_iban = Die Angegebene IBAN ist Korrekt
+check_digit_incorrect_message = Die Angegebene Code ist nicht Korrekt
+check_digit_incorrect_message_ean = Die Angegebene EAN ist nicht Korrekt
+check_digit_incorrect_message_iban = Die Angegebene IBAN ist nicht Korrekt
 check_digit_error_no_language_support = Land nicht unterstützt
-check_digit_error_iban_empty = iban nicht befüllt
+check_digit_error_ean_empty = EAN nicht befüllt
+check_digit_error_iban_empty = IBAN nicht befüllt
+check_digit_error_iban_length_unexpected = Bitte geben Sie eine 22-Stellige IBAN an
 check_digit_error_incorrect = Prüfziffer passt nicht
 
 // Semi General
@@ -29,3 +35,6 @@ length_is_not_expected = Länge der Eingebe entspricht nicht dem erwarteten Wert
 
 // General
 input_incorrect = Eingabe fehlerhaft
+// Language for abreviation
+language_for_abbreviation_en = englisch
+language_for_abbreviation_de = deutsch

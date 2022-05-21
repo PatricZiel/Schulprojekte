@@ -15,11 +15,11 @@ namespace Schulprojekte.Faces.CheckDigit
 {
     public partial class CheckDigitStep : Step
     {
-        String input = "";
-
         string userinputNameFragment = "";
         string userinputLabel = "";
         string userinputInputtype = Constants.INPUT_TYPE_TEXT_BOX;
+
+        private ButtonAsTooltip tool_information;
 
         public CheckDigitStep()
         {
@@ -42,7 +42,7 @@ namespace Schulprojekte.Faces.CheckDigit
 
         protected virtual void btn_validateButton_Click(object sender, System.EventArgs e)
         {
-            
+
         }
 
         protected void CheckdigitError(String errorMessage)
@@ -51,10 +51,31 @@ namespace Schulprojekte.Faces.CheckDigit
             lbl_resultMessage.ForeColor = Color.Red;
         }
 
+        protected void CheckdigitSuccess()
+        {
+            CheckdigitSuccess(Language.CHECK_DIGIT_CORRECT_MESSAGE);
+        }
+
+        protected void CheckdigitSuccess(String meessage)
+        {
+            lbl_resultMessage.Text = meessage;
+            lbl_resultMessage.ForeColor = Color.Green;
+        }
+
         protected void fillInputs(String label, String nameFragment)
         {
             this.userinputLabel = label;
             this.userinputNameFragment = nameFragment;
+        }
+
+        protected void ActivateToolTip(string toolTipText)
+        {
+            tool_information = new ButtonAsTooltip(toolTipText);
+
+            tool_information.Location = new System.Drawing.Point(860, 123);
+            tool_information.Name = "tool_information";
+
+            Controls.Add(tool_information);
         }
     }
 }
