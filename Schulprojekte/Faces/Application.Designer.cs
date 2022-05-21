@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.pnl_appHeader = new System.Windows.Forms.Panel();
+            this.closeButton = new System.Windows.Forms.Button();
             this.lbl_appHeader = new System.Windows.Forms.Label();
             this.pnl_appMainPart = new System.Windows.Forms.Panel();
             this.pnl_siteContent = new System.Windows.Forms.Panel();
             this.sidebar = new Schulprojekte.UIElements.Sidebar();
-            this.closeButton = new System.Windows.Forms.Button();
             this.pnl_appHeader.SuspendLayout();
             this.pnl_appMainPart.SuspendLayout();
             this.SuspendLayout();
@@ -48,6 +48,18 @@
             this.pnl_appHeader.Name = "pnl_appHeader";
             this.pnl_appHeader.Size = new System.Drawing.Size(980, 40);
             this.pnl_appHeader.TabIndex = 1;
+            // 
+            // closeButton
+            // 
+            this.closeButton.BackColor = System.Drawing.Color.White;
+            this.closeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.closeButton.Location = new System.Drawing.Point(944, 4);
+            this.closeButton.Name = "closeButton";
+            this.closeButton.Size = new System.Drawing.Size(30, 30);
+            this.closeButton.TabIndex = 1;
+            this.closeButton.Text = "X";
+            this.closeButton.UseVisualStyleBackColor = false;
+            this.closeButton.Click += new System.EventHandler(this.onClose);
             // 
             // lbl_appHeader
             // 
@@ -91,18 +103,6 @@
             this.sidebar.Name = "sidebar";
             this.sidebar.Size = new System.Drawing.Size(20, 600);
             this.sidebar.TabIndex = 4;
-            // 
-            // closeButton
-            // 
-            this.closeButton.BackColor = System.Drawing.Color.White;
-            this.closeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.closeButton.Location = new System.Drawing.Point(944, 4);
-            this.closeButton.Name = "closeButton";
-            this.closeButton.Size = new System.Drawing.Size(30, 30);
-            this.closeButton.TabIndex = 1;
-            this.closeButton.Text = "X";
-            this.closeButton.UseVisualStyleBackColor = false;
-            this.closeButton.Click += new System.EventHandler(this.onClose);
             // 
             // Application
             // 

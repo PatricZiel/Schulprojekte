@@ -16,6 +16,9 @@ namespace Schulprojekte
 {
     public partial class Application : Form
     {
+        int relativeMouseXLocation;
+        int relativeMouseYLocation;
+
         int mouseXLocation;
         int mouseYLocation;
         Boolean verschoben = false;
@@ -96,35 +99,36 @@ namespace Schulprojekte
 
         private void lbl_appHeader_MouseMove(object sender, MouseEventArgs e)
         {
-            if (verschoben)
-            {
-                int xVerschiebung = mouseXLocation - Cursor.Position.X;
-                int yVerschiebung = mouseYLocation - Cursor.Position.Y;
+            int mouseLocationX = Cursor.Position.X - mouseXLocation;
+            int mouseLocationY = Cursor.Position.Y - mouseYLocation;
 
-                this.Left -= xVerschiebung;
-                this.Top -= yVerschiebung;
-            }
-
-            mouseXLocation = Cursor.Position.X;
-            mouseYLocation = Cursor.Position.Y;
-
-            verschoben = true;
+            this.Left = relativeMouseXLocation + mouseLocationX;
+            this.Top = relativeMouseYLocation + mouseLocationY;
         }
 
         private void lbl_appHeader_MouseDown(object sender, MouseEventArgs e)
         {
             this.lbl_appHeader.MouseMove += meh;
+            relativeMouseXLocation = this.Location.X;
+            relativeMouseYLocation = this.Location.Y;
+
+            mouseXLocation = Cursor.Position.X;
+            mouseYLocation = Cursor.Position.Y;
         }
 
         private void lbl_appHeader_MouseUp(object sender, MouseEventArgs e)
         {
             this.lbl_appHeader.MouseMove -= meh;
-            verschoben = false;
         }
 
         private void onClose(object sender, EventArgs e)
         {
             System.Environment.Exit(0);
+        }
+
+        private void Application_MouseMove(object sender, MouseEventArgs e)
+        {
+
         }
     }
 }
