@@ -14,6 +14,7 @@ namespace Schulprojekte.Objekte {
         }
 
         /* private methods */
+        /* "Eltern"-Methode zum erstellen einer Random Map */
         private void writeRandomUsages() {
             Dictionary<char, List<int>> charEncryption = new Dictionary<char, List<int>>();
             List<int> usedIntegers = new List<int>();
@@ -33,6 +34,10 @@ namespace Schulprojekte.Objekte {
             writeEncryptionToConsole(charEncryption);
         }
 
+        /* 
+         * Knüpft unterstützte Zeichen an häufigkeit 
+         * um mehrere genutzte verschlüsselungen zu verwenden
+         */
         private void initCharUsage() {
             getCharUsage().Add('a', 6);
             getCharUsage().Add('b', 2);
@@ -69,6 +74,13 @@ namespace Schulprojekte.Objekte {
         }
         private void writeEncryptionToConsole(Dictionary<char, List<int>> charEncryption) {
             Console.WriteLine("Dictionary<char, List<int>> charEncryption = new Dictionary<char, List<int>>();");
+
+        /*
+         * Schreibt die Verschlüsselung ALS CODE 
+         * in die Console zum Copy-Pasten
+         */
+        private void writeEncryptionToConsole(Dictionary<string, List<string>> charEncryption) {
+            Console.WriteLine("Dictionary<string, List<string>> charEncryption = new Dictionary<string, List<string>>();");
             Console.WriteLine("");
             Console.WriteLine("char writeChar;");
             Console.WriteLine("List<int> writeListForChar;");
@@ -84,6 +96,50 @@ namespace Schulprojekte.Objekte {
                 Console.WriteLine("charEncryption.Add(wirteChar, writeListForChar);");
                 Console.WriteLine("");
             }
+        }
+
+        /*
+         * Erzeugt 3 random Characters
+         * für die verschlüsselung
+         */
+        private string generateRandomChars() {
+            Random rnd = new Random();
+            string returnValue = "";
+
+            string lastused = "";
+
+            for (int encLength = 0; encLength < Constants.ENCRYPTION_LENGTH; encLength++) {
+                while (lastused.Equals(returnValue)) {
+                    switch (rnd.Next(0, 3)) {
+                        case 0:
+                            returnValue += rnd.Next(0, 10).ToString();
+                            break;
+                        case 1:
+                            string[] rndChars = { "a", "b", "c", "d", "e",
+                            "f", "g", "h", "i", "j", "k", "l", "m", "n",
+                            "o", "p", "q", "r", "s", "t", "u", "v", "w",
+                            "x", "y", "z", "ä", "ö", "ü", "ß"};
+                            string returnString = rndChars[rnd.Next(0, rndChars.Length)];
+                            switch (rnd.Next(0, 2)) {
+                                case 0:
+                                    returnValue += returnString;
+                                    break;
+                                case 1:
+                                    returnValue += returnString.ToUpper();
+                                    break;
+                            }
+                            break;
+                        case 2:
+                            string[] rndSpecials = {".", ",", "?", "/", "\\\\", ";", ":",
+                            "+", "-", "_", " ", "*", "#", "'", "~", "(", ")", "!",
+                            "\\\"", "§", "$", "%", "&", "[", "]", "{", "}"};
+                            returnValue += rndSpecials[rnd.Next(0, rndSpecials.Length)];
+                            break;
+                    }
+                }
+                lastused = returnValue;
+            }
+            return returnValue;
         }
 
         /* Getter und Setter */
