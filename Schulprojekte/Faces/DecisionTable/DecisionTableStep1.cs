@@ -1,0 +1,39 @@
+﻿using Schulprojekte.Resources;
+using Schulprojekte.Resources.Language;
+using Schulprojekte.UIElements;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Schulprojekte.Faces.DecisionTable {
+    public partial class DecisionTableStep1 : Step {
+        public DecisionTableStep1() {
+            InitializeComponent();
+            step = Constants.CURRENT_SITE_STEP_ONE;
+
+            inputs.Add(new UserInput(Constants.NAME_FRAGMENT_OFFER_COUNT, Language.OFFER_COUNT, Constants.INPUT_TYPE_NUMERIC_UP_DOWN));
+            inputs.Add(new UserInput(Constants.NAME_FRAGMENT_AMOUND, Language.DELIVERY_AMOUNT, Constants.INPUT_TYPE_NUMERIC_UP_DOWN, "1"));
+            alignInputsFromTop();
+            foreach (UserInput userInput in inputs) {
+                //pnl_inputs.Controls.Add(userInput);
+            }
+        }
+
+        public bool submit() {
+            bool validationFailure = false;
+
+            foreach (UserInput userInput in inputs) {
+                if (!userInput.submit())
+                    validationFailure = true;
+            }
+
+            return validationFailure;
+        }
+    }
+}
