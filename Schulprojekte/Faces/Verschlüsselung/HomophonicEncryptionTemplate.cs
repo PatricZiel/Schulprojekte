@@ -25,8 +25,15 @@ namespace Schulprojekte.Faces.Verschlüsselung {
         public void Encrypt(object sender, EventArgs e) {
             string inputValue = input_value.Text;
             string converted = "";
+            string last = "";
+            string that = "";
             foreach (char c in inputValue) {
-                converted += GetEnsirat().getNumber(c.ToString());
+                that = GetEnsirat().getNumber(c.ToString());
+                while (that == last) {
+                    last = GetEnsirat().getNumber(c.ToString());
+                }
+                last = that;
+                converted += that;
             }
 
             input_value.Text = converted;
