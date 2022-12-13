@@ -1,5 +1,6 @@
 ﻿using Schulprojekte.Faces;
 using Schulprojekte.Faces.CheckDigit;
+using Schulprojekte.Faces.DecisionTable;
 using Schulprojekte.Faces.QuantitativeOfferComparison;
 using Schulprojekte.Objekte;
 using Schulprojekte.Resources;
@@ -92,6 +93,18 @@ namespace Schulprojekte
             projectButton.Name = "goToCheckDigit";
             projectButton.Text = Language.DBT_CHECK_DIGIT;
             projectButton.destinationSite = new CheckDigitTemplate();
+            projectButtons.Add(projectButton);
+
+            projectButton = new GoToProjectButton();
+            projectButton.Name = "goToCheckDigit";
+            projectButton.Text = "Homofonische Verschlüsselung";
+            projectButton.destinationSite = new HomophonicEncryptionTemplate();
+            projectButtons.Add(projectButton);
+
+            projectButton = new GoToProjectButton();
+            projectButton.Name = "goToDecisionTable";
+            projectButton.Text = "Entscheidungstabelle";
+            projectButton.destinationSite = new DecisionTableTemplate();
             projectButtons.Add(projectButton);
 
             return projectButtons;
