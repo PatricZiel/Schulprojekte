@@ -84,6 +84,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EntitieHandler\EHAppointment.cs" />
+    <Compile Include="EntitieHandler\EHSalutation.cs" />
+    <Compile Include="EntitieHandler\EHLocation.cs" />
+    <Compile Include="EntitieHandler\EHContactType.cs" />
+    <Compile Include="EntitieHandler\EHContact.cs" />
+    <Compile Include="EntitieHandler\EHCompany.cs" />
+    <Compile Include="Entities\Appointment.cs" />
+    <Compile Include="Entities\Company.cs" />
+    <Compile Include="Entities\Contact.cs" />
+    <Compile Include="Entities\ContactType.cs" />
+    <Compile Include="Entities\Location.cs" />
+    <Compile Include="Entities\Salutation.cs" />
     <Compile Include="Faces\Application.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -164,8 +176,6 @@
     </Compile>
     <Compile Include="Handler\CheckDigitHandler.cs" />
     <Compile Include="Handler\DbConnectionHandler.cs" />
-    <Compile Include="Handler\DicUtils.cs" />
-    <Compile Include="Handler\EncryptionHandler.cs" />
     <Compile Include="Handler\FacesHandler.cs" />
     <Compile Include="Handler\StringHandler.cs" />
     <Compile Include="Handler\TypeHandler.cs" />
@@ -276,6 +286,8 @@
   <ItemGroup>
     <Content Include="Resources\Language\language_de.txt" />
     <Content Include="Resources\Language\language_en.txt" />
+    <Content Include="Setup\02_setup_tables_location_company_contacttype_salutation_contact_appt.sql" />
+    <Content Include="Setup\01_setup_db.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\greaterThan.png" />
